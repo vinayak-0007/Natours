@@ -1,0 +1,57 @@
+.story{
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 1rem 2rem rgba(#000,0.2);
+  background-color:rgba(white,.6);
+  padding: 4rem ;
+  padding-left:9rem ;
+  font-size: $default-font-size;
+  border-radius: 3px;
+  transform: skewX(-12deg);
+  transition: all 0.5s;
+
+ 
+ &-shape{
+width: 9rem;
+height: 9rem;
+float: left;
+shape-outside: circle(50% at 50% 50%);
+clip-path:circle(50% at 50% 50%) ;
+transform: translateX(-2rem) skewX(12deg);
+position: relative;
+z-index: 1;
+ }
+ &-text{
+  transform: skewX(12deg);
+ }
+ &-image{
+   height: 100%;
+   transform: scale(1.3);
+  //  backface-visibility: hidden;
+   transition: all 0.5s;
+ }
+
+ &-caption{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   text-transform: uppercase;
+   font-size: 1.5rem;
+   color: $color-white;
+   transform: translate(-50%, 20%);
+   text-align: center;
+   opacity: 0;
+   transition: all 0.5s;
+
+ }
+ &-shape:hover &-caption{
+transform: translate(-50%,-50%);
+opacity: 1;
+ }
+ &-shape:hover &-image{
+   transform: scale(1);
+   filter: blur(5px) brightness(80%);
+ }
+
+
+}
